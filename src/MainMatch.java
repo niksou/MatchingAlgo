@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MainMatch {
@@ -15,12 +16,36 @@ public class MainMatch {
                 if (volList[i] == null)//the array has ended return the bool 2D arr
                     return twoDBool;
 
-                if(elderList[j].isRussian()&&!volList[i].isRussian())//making sure they speaking the same lang
-                    twoDBool[i][j]=false;
-                
-                int help = elderList[j].getHelp();//getting
+                if(elderList[j].isRussian()&&!volList[i].isRussian()) {//making sure they speaking the same lang
+                    twoDBool[i][j] = false;
+                }
 
+                else {
+                    int help = elderList[j].getHelp();//getting
+                    switch (help) {
+                        case 0:
+                            twoDBool[i][j] = false;//no call was made
+                            break;
+                        case 1://technical call
+                            if (!volList[i].isTech()) {
+                                twoDBool[i][j] = false;//cannot make match
+                            } else {
+                                twoDBool[i][j] = true;//match was made
+                            }
+                            break;
+                        case 2://house repair call
+                            if (!volList[i].isHouseRepair()) {
+                                twoDBool[i][j] = false;//cannot make match
+                            } else {
+                                twoDBool[i][j] = true;//match was made
+                            }
+                            break;
+                        case 3://general call
+                            twoDBool[i][j] = true;//match was made
+                            break;
+                    }
 
+                }
             }
         }
 
@@ -110,7 +135,7 @@ public class MainMatch {
 
         Scanner inputScan = new Scanner(System.in);
 
-        final int MAXSIZE=10;
+        final int MAXSIZE=3;
         int nextList=0;
         int elderNextList=0;
 
@@ -149,6 +174,12 @@ public class MainMatch {
         volList[0]=lironSun;
         volList[1]=nik;
         volList[2]=yosi;
+
+
+
+        boolean [][] twoDBool = twoDBoolean(volList,elderList);
+
+        System.out.println(Arrays.deepToString(twoDBool));
 
 
         int choise=0;
