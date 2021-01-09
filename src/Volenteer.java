@@ -1,4 +1,4 @@
-public class Volenteer {
+public class Volenteer extends MainMatch{
 
     static int nextId=1000; //every vol will get a uniqe id
     //main attributes
@@ -40,4 +40,6 @@ public class Volenteer {
         this.houseRepair = houseRepair;
         nextId++;
     }
+
+
 }

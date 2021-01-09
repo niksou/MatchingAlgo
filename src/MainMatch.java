@@ -11,8 +11,8 @@ public class MainMatch {
 
         boolean [][] twoDBool = new boolean [volList.length][elderList.length];
 
-        for (int i=0; i < volList.length;i++) {
-            for(int j=0; j < elderList.length; j++){
+        for (int i=0; i < volList.length;i++) {//volenteers
+            for(int j=0; j < elderList.length; j++){//elders
                 if (volList[i] == null)//the array has ended return the bool 2D arr
                     return twoDBool;
 
@@ -131,58 +131,13 @@ public class MainMatch {
 
     }
 
-    public static void main(String[] args) {
-
-        Scanner inputScan = new Scanner(System.in);
-//liron is gever
-        final int MAXSIZE=3;
-        int nextList=0;
-        int elderNextList=0;
+    public static void main(String[] args) throws Exception {
 
 
 
-        Elder davidKadosh = new Elder("David Kadosh","0529999999",
-                true,false,"Havatzelet 3 ,apt 24");
-
-        Elder haimForever = new Elder("Haim forever","0522222222",
-                false,true,"hapina 34 floor 5 apt 46");
-        Elder sabaZaken = new Elder("saba","012021021",
-                false,true,"nahal oz ooo11");
-        davidKadosh.setHelp();//tech
-        haimForever.setHelp();//house repair
-        sabaZaken.setHelp();//general  request
 
 
-
-        Volenteer nik = new Volenteer("Nik sou","058798213",
-                true,true,false);
-        Volenteer lironSun = new Volenteer("Liron Shemesh","0587999999",
-                false,false,true);
-        Volenteer yosi = new Volenteer("yosi yosi","2131123132",
-                false,false,false);
-
-
-
-//
-        Elder [] elderList = new Elder[MAXSIZE];//array of elder objects
-        Volenteer [] volList = new Volenteer[MAXSIZE];//array of volenteer objects
-
-        elderList[0]=haimForever;
-        elderList[1]=davidKadosh;
-        elderList[2]=sabaZaken;
-
-        volList[0]=lironSun;
-        volList[1]=nik;
-        volList[2]=yosi;
-
-
-
-        boolean [][] twoDBool = twoDBoolean(volList,elderList);
-
-        System.out.println(Arrays.deepToString(twoDBool));
-
-
-        int choise=0;
+       // int choise=0;
 
 //        while(choise!=4){//main menu
 //
