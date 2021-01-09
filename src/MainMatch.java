@@ -134,7 +134,7 @@ public class MainMatch {
     public static void main(String[] args) {
 
         Scanner inputScan = new Scanner(System.in);
-
+//liron is gever
         final int MAXSIZE=3;
         int nextList=0;
         int elderNextList=0;
